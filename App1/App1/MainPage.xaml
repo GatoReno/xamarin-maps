@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App1.MainPage">
+    <StackLayout Padding="0,10,0,10">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*" x:Name="firstRow" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <StackLayout 
+                Padding="5,0,5,0"
+                x:Name="s1"  
+                Grid.Row="0" Grid.Column="0" 
+                BindingContext="{x:Reference Name=s1}"  >
+
+                <Label x:Name="Msn" />
+                <Image
+                    x:Name="ImgProfile"
+                   >
+ 
+
+                </Image>
+                <Label x:Name="UserNamelb" />
+            </StackLayout>
+            <StackLayout x:Name="s2" BackgroundColor="Silver" Grid.Row="0" Grid.Column="1" BindingContext="{x:Reference Name=s2}">
+                <Button Text="Buscar" TextColor="Black" Clicked="Button_Clicked"   />
+              
+
+            </StackLayout>
+
+            <StackLayout x:Name="s3" Padding="2,2,2,2" BackgroundColor="Accent" Grid.Row="1" Grid.Column="0" BindingContext="{x:Reference Name=s3}">
+                <Label  Text="xxx}" />
+                <Label Text=" x " />
+                <Label  Text="xx}" />
+            </StackLayout>
+
+            <StackLayout x:Name="s4" Padding="2,2,2,2" BackgroundColor="Black" Grid.Row="1" Grid.Column="1" BindingContext="{x:Reference Name=s4}">
+                <Label FontSize="Micro" Text=" Ubicacion actual  " TextColor="Accent" />
+                <Label FontSize="Micro"   x:Name="Longit"  TextColor="Accent"/>
+                <Label FontSize="Micro"   x:Name="Latit" TextColor="Accent"/>
+                <Label FontSize="Micro"   x:Name="Altit" TextColor="Accent"/>
+            </StackLayout>
+
+            <StackLayout x:Name="s5" Padding="2,2,2,2" BackgroundColor="Black" Grid.Row="2" Grid.Column="0" BindingContext="{x:Reference Name=s5}">
+                <Label Text=" Geolocalizacion y Google Places " TextColor="Accent" />
+                <Label Text="1 "   />
+                <Label Text="1 " />
+            </StackLayout>
+
+            <StackLayout x:Name="s6" BackgroundColor="Black" Grid.Row="2" Grid.Column="1" BindingContext="{x:Reference Name=s6}">
+                <Button Text="Quit"
+                        TextColor="Accent"
+                            Clicked="Button_Quit"
+                         BackgroundColor="Black"
+                           />
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+</ContentPage>

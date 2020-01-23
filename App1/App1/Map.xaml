@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    <!--
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:map="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             mc:Ignorable="d"
+             x:Class="App1.Map">
+    <ContentPage.Content>
+        <Grid>
+
+            <map:Map x:Name="MyMap" MapType="Street" HasZoomEnabled="True">
+                <map:Map.ItemTemplate>
+                    <DataTemplate>
+                        <map:Pin Position="{Binding Position}"
+                              Address="{Binding Address}"
+                              Label="{Binding PlaceName}" />
+                    </DataTemplate>
+                </map:Map.ItemTemplate>
+            </map:Map>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+-->
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="App1.Map">
+
+
+    
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="250" />
+          
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="0">
+            <maps:Map x:Name="MyMap"
+               IsShowingUser="True"
+              >
+                <x:Arguments>
+                    <maps:MapSpan>
+
+                        <x:Arguments>
+                            <maps:Position>
+                                <x:Arguments>
+                                    <x:Double>23.6260333</x:Double>
+                                    <x:Double>-102.0194722</x:Double>
+                                </x:Arguments>
+                            </maps:Position>
+                            <x:Double>0.01</x:Double>
+                            <x:Double>0.01</x:Double>
+                        </x:Arguments>
+                    </maps:MapSpan>
+                </x:Arguments>
+                <maps:Map.Pins>
+
+                </maps:Map.Pins>
+            </maps:Map>
+        </StackLayout>
+  
+        <StackLayout Grid.Row="1" x:Name="listSection" IsVisible="true" HeightRequest="200">
+
+
+
+
+
+            <ListView x:Name="ListSKulls"
+                    ItemsSource="{Binding results}"
+                      
+                      >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell TextColor="Black" Text="{Binding name}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </Grid>
+
+ 
+ </ContentPage>
